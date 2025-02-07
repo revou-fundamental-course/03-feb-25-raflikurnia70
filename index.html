@@ -4,17 +4,73 @@
     <meta charset="UTF-8">
     <!-- Tag untuk responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Website Konversi Suhu</title>
 
     <!-- Link CSS -->
      <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-   <header></header>
+   <header class="main-header">
+    <h1>Konversi Suhu</h1>
+   </header>
 
-   <main></main>
+   <main>
+    <!-- Introduction -->
+     <section id="intro">
+        <p>Masukkan suhu derajat Celcius (&deg;C) ke kotak dibawah,
+            lalu klik tombol konversi untuk mendapatkan hasil konversi
+            dalam bentuk Fahrenheit (&deg;F)
+        </p>
+
+     </section>
+
+     <!-- Form Input Suhu Yang Ingin di Konversi -->
+      <Section>
+        <form>
+            <div>
+                <label for="main-input">Celcius:</label>
+                <input type="Number" id="inputcelcius" required>
+            </div>
+            
+            <div class="button-group" style="margin-top: 16px;">
+                <button type="submit">Konversi</button>
+                <button>Konversi</button>
+                <button>Reverse</button>
+            </div>
+        </form>
+      </Section>
+
+    <!-- Hasil Konversi -->
+    <section>
+        <div>
+            <label for="main-input">Fahrenheit:</label>
+            <input type="Number" id="main-result" readonly>
+        </div>
+    </section>
+    
+    <!-- Cara Konversi Suhu -->
+     <section id="cara">
+        <div>
+            <label id="cara-konversi">Cara Konversi:</label>
+            <input type="text" id="cara-konversi" readonly>
+        </div>
+     </section>
+
+    <!-- Penjelasan Rumus Konversi Suhu-->
+    <section id="Penjelasan">
+        <header>
+            <h3>Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)</h3>    
+        </header>
+
+        <article>
+            <p>Suhu <Span>S</Span></p>
+            <p>S<sub>(&deg;F)</sub> =</p>
+        </article>
+     </section>
+
+   </main>
 
    <footer></footer>
-   
+
 </body>
 </html>

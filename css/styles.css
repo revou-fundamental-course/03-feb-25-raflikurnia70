@@ -1,0 +1,22 @@
+main {
+    max-width: 700px;
+    align-items: center;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.input-group{
+    display: flex;
+    flex-direction:column;
+}
+
+
+.button-group{
+margin-top: 16px;
+}
+
+button {
+    border : none;
+    padding : 8px;
+
+}
