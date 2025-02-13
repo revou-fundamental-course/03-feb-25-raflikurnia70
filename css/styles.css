@@ -1,22 +1,87 @@
-main {
-    max-width: 700px;
-    align-items: center;
-    background-color: antiquewhite;
-    text-align: center;
-}
-
-.input-group{
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    color: #333;
     display: flex;
-    flex-direction:column;
+    justify-content: center; /* Memusatkan secara horizontal */
+    align-items: center; /* Memusatkan secara vertikal */
+    height: 100vh; /* Pastikan tinggi 100% dari viewport */
+    flex-direction: column; /* Mengatur konten secara vertikal */
+    border-color: #222;
 }
 
 
-.button-group{
-margin-top: 16px;
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 130vh;
 }
 
 button {
-    border : none;
-    padding : 8px;
+    background-color: #0044ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
 
+button:hover {
+    background-color: #ff5900;
+}
+
+#theme-toggle {
+    background-color: #333;
+    border: 1px solid white;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130vh;
+
+}
+
+/* Input Styles */
+input[type="number"], input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Layout */
+section {
+    margin: 20px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode header, 
+body.dark-mode footer {
+    background-color: #222;
+}
+
+body.dark-mode input, 
+body.dark-mode button {
+    background-color: #555;
+    color: white;
+    border: none;
+}
+
+body.dark-mode button:hover {
+    background-color: #666;
 }

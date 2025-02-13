@@ -7,70 +7,81 @@
     <title>Website Konversi Suhu</title>
 
     <!-- Link CSS -->
-     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
+   <!-- Header utama -->
    <header class="main-header">
     <h1>Konversi Suhu</h1>
+    <button id="theme-toggle" class="theme-toggle-btn">🌙 Ubah Tema</button> <!-- Tombol untuk mengganti tema -->
    </header>
 
    <main>
-    <!-- Introduction -->
-     <section id="intro">
-        <p>Masukkan suhu derajat Celcius (&deg;C) ke kotak dibawah,
+    <!-- Bagian Intro yang menjelaskan cara menggunakan aplikasi -->
+    <section id="intro" class="intro-section">
+        <p>Masukkan suhu derajat Celcius (&deg;C) ke kotak di bawah,
             lalu klik tombol konversi untuk mendapatkan hasil konversi
-            dalam bentuk Fahrenheit (&deg;F)
+            dalam bentuk Fahrenheit (&deg;F).
         </p>
-
      </section>
 
-     <!-- Form Input Suhu Yang Ingin di Konversi -->
-      <Section>
-        <form>
-            <div>
-                <label for="main-input">Celcius:</label>
-                <input type="Number" id="inputcelcius" required>
+     <!-- Form untuk input suhu Celcius -->
+     <section class="conversion-form">
+        <form id="conversion-form" onsubmit="return false;">
+            <div class="input-group">
+                <label for="inputcelcius">Celcius (&deg;C):</label>
+                <!-- Input suhu Celcius dengan validasi untuk memastikan tidak kosong -->
+                <input type="number" id="inputcelcius" required placeholder="Masukkan suhu Celcius" min="0">
             </div>
-            
-            <div class="button-group" style="margin-top: 16px;">
-                <button type="submit">Konversi</button>
-                <button>Konversi</button>
-                <button>Reverse</button>
+            <div class="button-group">
+                <button type="button" id="convert-btn">Konversi</button>
+                <button type="button" id="reverse-btn">Reverse</button>
             </div>
         </form>
-      </Section>
+     </section>
 
-    <!-- Hasil Konversi -->
-    <section>
-        <div>
-            <label for="main-input">Fahrenheit:</label>
-            <input type="Number" id="main-result" readonly>
+    <!-- Menampilkan hasil konversi Fahrenheit -->
+    <section class="result-section">
+        <div class="input-group">
+            <label for="main-result">Fahrenheit (&deg;F):</label>
+            <!-- Hasil konversi Fahrenheit yang hanya bisa dibaca (readonly) -->
+            <input type="number" id="main-result" readonly placeholder="Hasil konversi">
         </div>
     </section>
-    
-    <!-- Cara Konversi Suhu -->
-     <section id="cara">
-        <div>
-            <label id="cara-konversi">Cara Konversi:</label>
-            <input type="text" id="cara-konversi" readonly>
+
+    <!-- Bagian untuk menampilkan cara konversi -->
+    <section id="cara" class="explanation-section">
+        <div class="input-group">
+            <label for="cara-konversi">Cara Konversi:</label>
+            <input type="text" id="cara-konversi" readonly placeholder="Penjelasan rumus konversi">
         </div>
      </section>
 
-    <!-- Penjelasan Rumus Konversi Suhu-->
+    <!-- Penjelasan tentang rumus konversi Celcius ke Fahrenheit -->
     <section id="Penjelasan">
         <header>
-            <h3>Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)</h3>    
+            <h3>Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)</h3>
         </header>
 
         <article>
-            <p>Suhu <Span>S</Span></p>
-            <p>S<sub>(&deg;F)</sub> =</p>
+            <p>Rumus konversi suhu dari Celcius ke Fahrenheit adalah:</p>
+            <p>S<sub>(&deg;F)</sub> = (S<sub>(&deg;C)</sub> * 9/5) + 32</p>
+        </article>
+
+        <article>
+            <p>Rumus konversi suhu dari Fahrenheit ke Celcius adalah:</p>
+            <p>S<sub>(&deg;C)</sub> = (S<sub>(&deg;F)</sub> - 32) * 5/9</p>
         </article>
      </section>
 
    </main>
 
-   <footer></footer>
+   <!-- Footer -->
+   <footer class="footer">
+       <p>&copy; 2025 Website Konversi Suhu</p>
+   </footer>
 
+   <script src="js/script.js"></script>
 </body>
 </html>
