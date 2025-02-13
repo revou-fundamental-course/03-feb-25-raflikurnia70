@@ -1,51 +1,50 @@
-// Variabel global untuk menentukan mode konversi:
-// true  => Konversi dari Celcius ke Fahrenheit
-// false => Konversi dari Fahrenheit ke Celcius
-let isCtoF = true;
-
-// Event listener untuk tombol Konversi
+// Fungsi untuk konversi dari Celcius ke Fahrenheit
 document.getElementById('convert-btn').addEventListener('click', function() {
-  let inputVal = parseFloat(document.getElementById('inputcelcius').value);
-  if (!isNaN(inputVal)) {
-    if (isCtoF) {
-      // Konversi dari Celcius ke Fahrenheit
-      let fahrenheit = (inputVal * 9/5) + 32;
-      document.getElementById('main-result').value = fahrenheit.toFixed(2);
-    } else {
-      // Konversi dari Fahrenheit ke Celcius
-      let celcius = (inputVal - 32) * 5/9;
-      document.getElementById('main-result').value = celcius.toFixed(2);
+    let celcius = parseFloat(document.getElementById('inputcelcius').value);
+    if (!isNaN(celcius)) {
+        let fahrenheit = (celcius * 9 / 5) + 32;
+        document.getElementById('main-result').value = fahrenheit;
+        document.getElementById('cara-konversi').value = 'S(°F) = (S(°C) * 9/5) + 32';
     }
-  } else {
-    alert("Masukkan nilai suhu yang valid!");
-  }
 });
 
-// Event listener untuk tombol Reverse
+// Fungsi untuk reverse konversi dan menukar label Celcius dan Fahrenheit
 document.getElementById('reverse-btn').addEventListener('click', function() {
-  // Toggle mode konversi
-  isCtoF = !isCtoF;
-  
-  // Menukar nilai antara input dan output
-  let inputField = document.getElementById('inputcelcius');
-  let resultField = document.getElementById('main-result');
-  let temp = inputField.value;
-  inputField.value = resultField.value;
-  resultField.value = temp;
-  
-  // Update label dan penjelasan rumus sesuai mode
-  if (isCtoF) {
-    document.getElementById('input-label').innerText = 'Celcius (°C):';
-    document.getElementById('result-label').innerText = 'Fahrenheit (°F):';
-    document.getElementById('cara-konversi').value = 'S(°F) = (S(°C) * 9/5) + 32';
-  } else {
-    document.getElementById('input-label').innerText = 'Fahrenheit (°F):';
-    document.getElementById('result-label').innerText = 'Celcius (°C):';
-    document.getElementById('cara-konversi').value = 'S(°C) = (S(°F) - 32) * 5/9';
-  }
+    let celciusInput = document.getElementById('inputcelcius');
+    let fahrenheitInput = document.getElementById('main-result');
+    let caraKonversi = document.getElementById('cara-konversi');
+    let labelCelcius = document.getElementById('label-celcius');
+    let labelFahrenheit = document.getElementById('label-fahrenheit');
+    
+    // Jika input Celcius ada dan valid, konversikan ke Fahrenheit
+    if (celciusInput.value !== "" && !isNaN(celciusInput.value)) {
+        let celcius = parseFloat(celciusInput.value);
+        let fahrenheit = (celcius * 9 / 5) + 32;
+        fahrenheitInput.value = fahrenheit; // Menampilkan hasil konversi ke Fahrenheit
+        celciusInput.value = ""; // Kosongkan input Celcius setelah konversi
+        caraKonversi.value = 'S(°F) = (S(°C) * 9/5) + 32'; // Update rumus konversi
+        
+        // Tukar label: tampilkan Fahrenheit dan sembunyikan Celcius
+        labelCelcius.textContent = "Fahrenheit (&deg;F):";
+        labelFahrenheit.textContent = "Celcius (&deg;C):";
+    } 
+    // Jika input Fahrenheit ada dan valid, konversikan ke Celcius
+    else if (fahrenheitInput.value !== "" && !isNaN(fahrenheitInput.value)) {
+        let fahrenheit = parseFloat(fahrenheitInput.value);
+        let celcius = (fahrenheit - 32) * 5 / 9;
+        celciusInput.value = celcius.toFixed(2); // Menampilkan hasil konversi ke Celcius
+        fahrenheitInput.value = ""; // Kosongkan input Fahrenheit setelah konversi
+        caraKonversi.value = 'S(°C) = (S(°F) - 32) * 5/9'; // Update rumus konversi
+        
+        // Tukar label: tampilkan Celcius dan sembunyikan Fahrenheit
+        labelCelcius.textContent = "Celcius (&deg;C):";
+        labelFahrenheit.textContent = "Fahrenheit (&deg;F):";
+    } else {
+        alert("Please enter a valid temperature value to convert.");
+    }
 });
 
-// Event listener untuk tombol Ubah Tema (Light/Dark Mode)
+// Fungsi untuk mengganti tema
 document.getElementById('theme-toggle').addEventListener('click', function() {
-  document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('dark-mode');
 });

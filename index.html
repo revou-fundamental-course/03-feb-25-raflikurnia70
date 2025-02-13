@@ -27,27 +27,28 @@
      </section>
 
      <!-- Form untuk input suhu Celcius -->
-     <section class="conversion-form">
-        <form id="conversion-form" onsubmit="return false;">
-            <div class="input-group">
-                <label for="inputcelcius">Celcius (&deg;C):</label>
-                <!-- Input suhu Celcius dengan validasi untuk memastikan tidak kosong -->
-                <input type="number" id="inputcelcius" required placeholder="Masukkan suhu Celcius" min="0">
-            </div>
-            <div class="button-group">
-                <button type="button" id="convert-btn">Konversi</button>
-                <button type="button" id="reverse-btn">Reverse</button>
-            </div>
-        </form>
-     </section>
+     <!-- Form untuk input suhu Celcius -->
+<section class="conversion-form">
+    <form id="conversion-form" onsubmit="return false;">
+        <div class="input-group">
+            <label id="label-celcius" for="inputcelcius">Celcius (&deg;C):</label>
+            <input type="number" id="inputcelcius" required placeholder="Masukkan suhu Celcius" min="0">
+        </div>
+        <div class="button-group">
+            <button type="button" id="convert-btn">Konversi</button>
+            <button type="button" id="reverse-btn">Reverse</button>
+        </div>
+    </form>
+</section>
+
 
     <!-- Menampilkan hasil konversi Fahrenheit -->
     <section class="result-section">
         <div class="input-group">
-            <label for="main-result">Fahrenheit (&deg;F):</label>
-            <!-- Hasil konversi Fahrenheit yang hanya bisa dibaca (readonly) -->
+            <label id="label-fahrenheit" for="main-result">Fahrenheit (&deg;F):</label>
             <input type="number" id="main-result" readonly placeholder="Hasil konversi">
         </div>
+        
     </section>
 
     <!-- Bagian untuk menampilkan cara konversi -->
